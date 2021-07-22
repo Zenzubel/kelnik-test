@@ -7,8 +7,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -55,6 +53,14 @@ button {
   cursor: pointer;
 }
 
+button {
+  cursor: pointer;
+}
+
+button:active {
+  -webkit-tap-highlight-color: transparent;
+}
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
@@ -93,24 +99,32 @@ p {
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../../fonts/Montserrat-Bold.woff2") format("woff2"), url("../../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: bold;
+  font-family: 'PT Root UI';
+  src: url("../../fonts/PT-Root-UI_Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../../fonts/Montserrat-Regular.woff2") format("woff2"), url("../../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: normal;
+  font-family: 'PT Root UI';
+  src: url("../../fonts/PT-Root-UI_Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Root UI';
+  src: url("../../fonts/PT-Root-UI_Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
-  color: #000;
+  font-family: 'PT Root UI', sans-serif;
+  color: #0B1739;
 }
 
 body.lock {
@@ -124,20 +138,6 @@ body.lock {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  transition-duration: 1s;
-}
-
-.wrapper.displacement {
-  margin-right: 0;
-  margin-left: -260px;
-  transition-duration: 1s;
-  overflow: visible;
-}
-
-@media (max-width: 319px) {
-  .wrapper.displacement {
-    margin-left: -230px;
-  }
 }
 
 .content {
@@ -150,111 +150,50 @@ body.lock {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1470px;
   padding: 0 15px;
   margin: 0 auto;
   width: 100%;
 }
 
-.menu-burger__icon {
-  display: none;
-  width: 30px;
-  height: 20px;
-  position: relative;
-  transition-duration: 0.7s;
+.filter__filter {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(174, 228, 178, 0.3) 0%, rgba(149, 208, 161, 0.3) 100%);
 }
 
-@media (max-width: 991.98px) {
-  .menu-burger__icon {
-    display: block;
-    position: absolute;
-    right: 15px;
-    top: 30px;
-  }
+.filter__rooms {
+  display: flex;
 }
 
-.menu-burger__icon:before {
-  top: 0;
-}
-
-.menu-burger__icon:after {
-  bottom: 0;
-}
-
-.menu-burger__icon:before, .menu-burger__icon:after {
-  transform: rotate(0);
-  transition-duration: 0.3s;
-}
-
-.menu-burger__icon.active {
-  z-index: 7;
-  transition-duration: 0.7s;
-}
-
-.menu-burger__icon.active:before {
-  transform: translateY(0) rotate(-45deg);
-}
-
-.menu-burger__icon.active:after {
-  transform: translateY(0) rotate(45deg);
-}
-
-.menu-burger__icon.active:before, .menu-burger__icon.active:after {
+.filter__room-btn {
+  width: 100%;
+  flex: 0 1 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background-color: #fff;
+  box-shadow: 0px 0px 0px #95D0A1;
   transition-duration: 0.3s;
-  top: 50%;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
 }
 
-.menu-burger__middle {
-  top: 50%;
-  transform: translateY(-50%);
-  transition-duration: 0.7s;
+.filter__room-btn + .filter__room-btn {
+  margin-left: 16px;
 }
 
-.menu-burger__icon:before, .menu-burger__icon:after,
-.menu-burger__icon .menu-burger__middle {
-  position: absolute;
-  content: "";
-  left: 0;
-  height: 4px;
-  width: 30px;
-  background-color: #000;
-  display: inline-block;
+.filter__room-btn.active {
+  color: #fff;
+  background-color: #3EB57C;
+  box-shadow: 0px 6px 20px #95D0A1;
 }
 
-.menu-burger__icon.active .menu-burger__middle {
-  transform: scale(0.1, 0.2);
-  transition-duration: 0.7s;
-}
-
-.menu-burger__container {
-  display: none;
-}
-
-@media (max-width: 991.98px) {
-  .menu-burger__container {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -260px;
-    width: 100%;
-    max-width: 260px;
-    background-color: #cacaca;
-    padding: 30px;
-    height: 100vh;
+@media (any-hover: hover) {
+  .filter__room-btn:hover {
+    box-shadow: 0px 6px 20px #95D0A1;
   }
-}
-
-.menu-burger__item {
-  width: 100%;
-}
-
-.menu-burger__link {
-  padding: 5px 0;
-  width: 100%;
-  color: #000;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
 }

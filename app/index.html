@@ -19,11 +19,64 @@
 						<div class="filter__wrapper">
 							<div class="container">
 								<div class="filter__inner">
-									<div class="filter__title-box">
-										<h1 class="filter__title">Квартиры</h1>
+									<div class="filter__body">
+										<div class="filter__title-box">
+											<h1 class="filter__title">Квартиры</h1>
+										</div>
+										<div class="filter__range">
+											<div class="filter__filter">
+												<div class="filter__rooms">
+													<button class="filter__room-btn active">1к</button>
+													<button class="filter__room-btn">2к</button>
+													<button class="filter__room-btn">3к</button>
+													<button class="filter__room-btn">4к</button>
+												</div>
+
+												<div class="filter__filter-count">
+													<div class="filter__count-title">Стомость квартиры, <span class="filter__currency">₽</span></div>
+													<div class="filter__inputs">
+														<div class="filter__shell">
+															<label for="input-count-0" class="filter__label">
+																<span class="filter__start">От</span>
+																<input type="number" class="filter__input" id="input-count-0"></input>
+															</label>
+														</div>
+														<div class="filter__shell">
+															<label for="input-count-1" class="filter__label">
+																<span class="filter__start">До</span>
+																<input type="number" class="filter__input" id="input-count-1"></input>
+															</label>
+														</div>
+													</div>
+													<div id="slider-count" class="filter__slider"></div>
+												</div>
+
+												<div class="filter__filter-measure">
+													<div class="filter__count-title">Площадь, <span class="filter__measure">м</span></div>
+													<div class="filter__inputs">
+														<div class="filter__shell">
+															<label for="input-measure-0" class="filter__label">
+																<span class="filter__start">От</span>
+																<input type="number" class="filter__input" id="input-measure-0"></input>
+															</label>
+														</div>
+														<div class="filter__shell">
+															<label for="input-measure-1" class="filter__label">
+																<span class="filter__start">До</span>
+																<input type="number" class="filter__input" id="input-measure-1"></input>
+															</label>
+														</div>
+													</div>
+													<div id="slider-measure" class="filter__slider"></div>
+												</div>
+
+												<div class="filter__reset">
+													<button class="filter__reset-btn"></button>
+												</div>
+											</div>
+										</div>
+										<div class="filter__content"></div>
 									</div>
-									<div class="filter__content"></div>
-									<div class="filter__range"></div>
 								</div>
 							</div>
 						</div>

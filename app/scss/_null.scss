@@ -3,6 +3,7 @@
 	margin: 0px;
 	border: 0px;
 }
+
 *,
 *:before,
 *:after {
@@ -10,14 +11,17 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 :focus,
 :active {
 	outline: none;
 }
+
 a:focus,
 a:active {
 	outline: none;
 }
+
 aside,
 nav,
 footer,
@@ -25,11 +29,13 @@ header,
 section {
 	display: block;
 }
+
 html,
 body {
 	height: 100%;
 	margin: 0;
 }
+
 body {
 	line-height: 1;
 	-ms-text-size-adjust: 100%;
@@ -45,33 +51,49 @@ input,
 button,
 textarea {
 }
+
 input::-ms-clear {
 	display: none;
 }
+
 button {
 	cursor: pointer;
 }
+
+button {
+	cursor: pointer;
+}
+
+button:active {
+	-webkit-tap-highlight-color: transparent;
+}
+
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
+
 a,
 a:visited {
 	text-decoration: none;
 	display: inline-block;
 }
+
 a:hover {
 	text-decoration: none;
 }
+
 ul li {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
+
 img {
 	font-size: 0;
 	vertical-align: top;
 }
+
 h1,
 h2,
 h3,
