@@ -1,0 +1,42 @@
+@import "_null.scss";
+@import "_libs.scss";
+@import "_fonts.scss";
+
+
+body {
+	font-family: 'PT Root UI', sans-serif;
+	color: #0B1739;
+	// line-height: 27 / 18 * 100%;
+	&.lock {
+		overflow-x: hidden;
+	}
+}
+
+.wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.content {
+	flex: 1 0 auto;
+	margin-right: 0;
+}
+
+.footer {
+	flex: 0 0 auto;
+}
+
+.container {
+	max-width: 1470px;
+	padding: 0 15px;
+	margin: 0 auto;
+	width: 100%;
+}
+@import "_global_style.scss";
+@import "_content.scss";
+
+

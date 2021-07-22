@@ -1,0 +1,23 @@
+
+let arr = [1, 2, 3, 2, 3,];
+
+let arrDouble = []; //в этот массив запишутся все повторяющиеся значения строки ячеек
+
+//выделяем все повторяющиеся значения в строке ячеек
+arrDouble = arr.filter((item, i) => arr.includes(item, arr.indexOf(item) === i? i + 1 : 0));
+
+
+//Заменяем все повторяющиеся ячейки на пустую строку
+let newArr = arr.map((el, i) => arr.indexOf(el) === i ? el : '');
+
+
+//Заменяем все повторяющиеся ячейки на пустую строку
+        const valuesSet = new Set();
+        const newDataValues = allDataValues.map((value) => {
+            if (valuesSet.has(value)) {
+                return '';
+            } else {
+                valuesSet.add(value);
+                return value;
+            }
+        });

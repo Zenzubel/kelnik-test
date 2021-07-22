@@ -1,0 +1,260 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  font-size: 0;
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../../fonts/Montserrat-Bold.woff2") format("woff2"), url("../../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../../fonts/Montserrat-Regular.woff2") format("woff2"), url("../../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #000;
+}
+
+body.lock {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  transition-duration: 1s;
+}
+
+.wrapper.displacement {
+  margin-right: 0;
+  margin-left: -260px;
+  transition-duration: 1s;
+  overflow: visible;
+}
+
+@media (max-width: 319px) {
+  .wrapper.displacement {
+    margin-left: -230px;
+  }
+}
+
+.content {
+  flex: 1 0 auto;
+  margin-right: 0;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.menu-burger__icon {
+  display: none;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transition-duration: 0.7s;
+}
+
+@media (max-width: 991.98px) {
+  .menu-burger__icon {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 30px;
+  }
+}
+
+.menu-burger__icon:before {
+  top: 0;
+}
+
+.menu-burger__icon:after {
+  bottom: 0;
+}
+
+.menu-burger__icon:before, .menu-burger__icon:after {
+  transform: rotate(0);
+  transition-duration: 0.3s;
+}
+
+.menu-burger__icon.active {
+  z-index: 7;
+  transition-duration: 0.7s;
+}
+
+.menu-burger__icon.active:before {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.menu-burger__icon.active:after {
+  transform: translateY(0) rotate(45deg);
+}
+
+.menu-burger__icon.active:before, .menu-burger__icon.active:after {
+  background-color: #fff;
+  transition-duration: 0.3s;
+  top: 50%;
+}
+
+.menu-burger__middle {
+  top: 50%;
+  transform: translateY(-50%);
+  transition-duration: 0.7s;
+}
+
+.menu-burger__icon:before, .menu-burger__icon:after,
+.menu-burger__icon .menu-burger__middle {
+  position: absolute;
+  content: "";
+  left: 0;
+  height: 4px;
+  width: 30px;
+  background-color: #000;
+  display: inline-block;
+}
+
+.menu-burger__icon.active .menu-burger__middle {
+  transform: scale(0.1, 0.2);
+  transition-duration: 0.7s;
+}
+
+.menu-burger__container {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .menu-burger__container {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -260px;
+    width: 100%;
+    max-width: 260px;
+    background-color: #cacaca;
+    padding: 30px;
+    height: 100vh;
+  }
+}
+
+.menu-burger__item {
+  width: 100%;
+}
+
+.menu-burger__link {
+  padding: 5px 0;
+  width: 100%;
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
