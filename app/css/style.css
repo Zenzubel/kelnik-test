@@ -485,6 +485,22 @@ input[type="number"]:focus {
   right: 28px;
 }
 
+.calculus {
+  position: relative;
+}
+
+.calculus:before {
+  position: absolute;
+  content: "2";
+  top: -3px;
+  right: -5px;
+  width: auto;
+  height: auto;
+  font-family: PT Root UI;
+  font-weight: 400;
+  font-size: 8px;
+}
+
 .filter__filter {
   width: 100%;
   max-width: 400px;
@@ -523,6 +539,10 @@ input[type="number"]:focus {
   box-shadow: 0px 6px 20px #95D0A1;
 }
 
+.filter__room-btn.disabled {
+  color: rgba(11, 23, 57, 0.2);
+}
+
 .filter__count-title {
   cursor: default;
   margin-bottom: 8px;
@@ -536,7 +556,6 @@ input[type="number"]:focus {
 }
 
 .filter__shell {
-  outline: 1px solid red;
   width: 100%;
   max-width: 50%;
 }
@@ -597,22 +616,6 @@ input[type="number"]:focus {
 
 .filter__slider .noUi-handle.noUi-handle-lower {
   right: -14px;
-}
-
-.filter__measure {
-  position: relative;
-}
-
-.filter__measure:before {
-  position: absolute;
-  content: "2";
-  top: -3px;
-  right: -5px;
-  width: auto;
-  height: auto;
-  font-family: PT Root UI;
-  font-weight: 400;
-  font-size: 8px;
 }
 
 .filter__reset-btn {
