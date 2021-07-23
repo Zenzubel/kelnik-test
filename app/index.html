@@ -38,13 +38,13 @@
 														<div class="filter__shell">
 															<label for="input-count-0" class="filter__label">
 																<span class="filter__start">От</span>
-																<input type="number" class="filter__input" id="input-count-0"></input>
+																<input id="input-count-0" class="filter__input" type="number" min="2000000" max="50000000"></input>
 															</label>
 														</div>
 														<div class="filter__shell">
 															<label for="input-count-1" class="filter__label">
 																<span class="filter__start">До</span>
-																<input type="number" class="filter__input" id="input-count-1"></input>
+																<input id="input-count-1" class="filter__input" type="number" min="20" max="250"></input>
 															</label>
 														</div>
 													</div>
@@ -71,7 +71,7 @@
 												</div>
 
 												<div class="filter__reset">
-													<button class="filter__reset-btn"></button>
+													<button id="set-default" class="filter__reset-btn">Сбросить параметры</button>
 												</div>
 											</div>
 										</div>
@@ -90,7 +90,9 @@
 			</footer>
 			<!-- end-footer -->
 		</div>
+		
 		<script src="js/libs.min.js"></script>
+		<script src="js/range-slider.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
