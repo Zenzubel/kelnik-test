@@ -42,11 +42,7 @@ body {
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
-//=========for popup.js=======
-body.lock {
-	overflow: hidden;
-}
-//=========
+
 input,
 button,
 textarea {
@@ -54,10 +50,6 @@ textarea {
 
 input::-ms-clear {
 	display: none;
-}
-
-button {
-	cursor: pointer;
 }
 
 button {
