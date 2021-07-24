@@ -106,5 +106,33 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 		////////end tabs//////////////
 	}
+	//start scroll to top button
+	const buttonScrollTop = document.querySelector('.scroll-up');
+
+	if (buttonScrollTop) {
+		window.addEventListener('scroll', function(e) {
+		const position = window.scrollY;
+
+			if (position > 0) {
+				buttonScrollTop.classList.add('active');
+				// headerLogo.classList.add('active');
+				// headerPopup.classList.add('active');
+			}
+
+			if (position <= 0) {
+				buttonScrollTop.classList.remove('active');
+				// headerLogo.classList.remove('active');
+				// headerPopup.classList.remove('active');
+			}
+		});
+
+		buttonScrollTop.addEventListener('click', (event)=>{
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+	}
+	//end scroll to top button
 
 });

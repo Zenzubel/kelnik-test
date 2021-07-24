@@ -76,54 +76,118 @@
 											</div>
 										</div>
 										<div class="filter__content apartments">
-											<div class="apartments__inner">
+											<div class="apartments__wrapper">
 												<div class="apartments__heading">
 													<div class="apartments__head-design column-1">Планировка</div>
 													<div class="apartments__head-flat column-2">Квартира</div>
-													<div class="apartments__head-space column-3">
+													<div class="apartments__head-space mrgn-l btn-small column-count">
 														<span class="apartments__space-mark calculus">S, м</span>
-														<div class="apartments__buttons">
-															<button id="space-up" class="apartments__button"></button>
-															<button id="space-down" class="apartments__button"></button>
+														<div class="apartments__indicators">
+															<span id="space-up" class="apartments__indicator apartments__indicator--up middle"></span>
+															<span id="space-down" class="apartments__indicator apartments__indicator--down middle"></span>
 														</div>
 													</div>
-													<div class="apartments__head-floor column-4">
+													<div class="apartments__head-floor mrgn-l btn-small column-count">
 														<span class="apartments__floor-mark">Этаж</span>
-														<div class="apartments__buttons">
-															<button id="floor-up" class="apartments__button"></button>
-															<button id="floor-down" class="apartments__button"></button>
+														<div class="apartments__indicators">
+															<span id="floor-up" class="apartments__indicator apartments__indicator--up middle"></span>
+															<span id="floor-down" class="apartments__indicator apartments__indicator--down middle"></span>
 														</div>
 													</div>
-													<div class="apartments__head-price column-5">
-														<span class="apartments__floor-mark">Цена, ₽</span>
-														<div class="apartments__buttons">
-															<button id="price-up" class="apartments__button"></button>
-															<button id="price-down" class="apartments__button"></button>
+													<div class="apartments__head-handover mrgn-l btn-small column-count">
+														<span class="apartments__handover-mark">Сдача</span>
+														<div class="apartments__indicators">
+															<span id="handover-up" class="apartments__indicator apartments__indicator--up middle"></span>
+															<span id="handover-down" class="apartments__indicator apartments__indicator--down middle"></span>
+														</div>
+													</div>
+													<div class="apartments__head-price mrgn-l btn-small column-count">
+														<span class="apartments__price-mark">Цена, ₽</span>
+														<div class="apartments__indicators">
+															<span id="price-up" class="apartments__indicator apartments__indicator--up plus"></span>
+															<span id="price-down" class="apartments__indicator apartments__indicator--down middle"></span>
 														</div>
 													</div>
 												</div>
-												<div class="apartments__body">
-													<div class="apartments__design column-1">
-														<img class="apartments__image" src="images/flat_plan_gor.jpg" alt="Планировка трехкомнатной квартиры">
-													</div>
-													<div class="apartments__flat">
-														<span class="apartments__flat-ordinal-num">3-комнатная №104</span>
-													</div>
-													<div class="apartments__space">
-														<span class="apartments__space-num">63,1</span>
-													</div>
-													<div class="apartments__floor">
-														<span class="apartments__floor-lavel">1</span>
-														<span class="apartments__floor-text">из</span>
-														<span class="apartments__floor-total">17</span>
-													</div>
-													<div class="apartments__price">
-														<span class="apartments__price-count">6 630 500</span>
-													</div>
+												<div id="apartments-pool" class="apartments__inner">
+													<a href="#" class="apartments__body">
+														<div class="apartments__design column-1">
+															<img class="apartments__image" src="images/flat_plan_gor.jpg" alt="Планировка трехкомнатной квартиры">
+														</div>
+														<div class="apartments__box">
+															<div class="apartments__flat column-2">
+																<span class="apartments__flat-ordinal-num">3-комнатная №104</span>
+															</div>
+															<span class="apartments__space column-count">
+																<span class="apartments__space-num">63,1</span>
+																<span class="apartments__space-metrica calculus">м</span>
+															</span>
+															<span class="apartments__floor column-count">
+																<span class="apartments__floor-lavel">1</span>
+																<span class="apartments__floor-text">из</span>
+																<span class="apartments__floor-total">17</span>
+																<span class="apartments__floor-metrica">этаж</span>
+															</span>
+															<span class="apartments__price column-count">
+																<span class="apartments__price-count">16 630 500 <span class="apartments__price-currency">₽</span></span>
+															</span>
+														</div>
+													</a>
+													<a href="#" class="apartments__body">
+														<div class="apartments__design column-1">
+															<img class="apartments__image" src="images/flat_plan_gor.jpg" alt="Планировка трехкомнатной квартиры">
+														</div>
+														<div class="apartments__box">
+															<div class="apartments__flat column-2">
+																<span class="apartments__flat-ordinal-num">3-комнатная №104</span>
+															</div>
+															<span class="apartments__space column-count">
+																<span class="apartments__space-num">63,1</span>
+																<span class="apartments__space-metrica calculus">м</span>
+															</span>
+															<span class="apartments__floor column-count">
+																<span class="apartments__floor-lavel">1</span>
+																<span class="apartments__floor-text">из</span>
+																<span class="apartments__floor-total">17</span>
+																<span class="apartments__floor-metrica">этаж</span>
+															</span>
+															<span class="apartments__price column-count">
+																<span class="apartments__price-count">6 630 500 <span class="apartments__price-currency">₽</span></span>
+															</span>
+														</div>
+													</a>
 												</div>
-											</div>
 											</div>
 										</div>
+										
+									</div>
+									<div class="filter__button-load">
+										<button class="filter__load-more">Загрузить еще</button>
+									</div>
+									<div id="pre-apartments" class="filter__more-apartments">
+										<a href="#" class="apartments__body">
+											<div class="apartments__design column-1">
+												<img class="apartments__image" src="images/flat_plan_gor.jpg" alt="Планировка трехкомнатной квартиры">
+											</div>
+											<div class="apartments__box">
+												<div class="apartments__flat column-2">
+													<span class="apartments__flat-ordinal-num">3-комнатная №104</span>
+												</div>
+												<span class="apartments__space column-count">
+													<span class="apartments__space-num">63,1</span>
+													<span class="apartments__space-metrica calculus">м</span>
+												</span>
+												<span class="apartments__floor column-count">
+													<span class="apartments__floor-lavel">1</span>
+													<span class="apartments__floor-text">из</span>
+													<span class="apartments__floor-total">17</span>
+													<span class="apartments__floor-metrica">этаж</span>
+												</span>
+												<span class="apartments__price column-count">
+													<span class="apartments__price-count">16 630 500 <span class="apartments__price-currency">₽</span></span>
+												</span>
+											</div>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -137,10 +201,11 @@
 			<footer class="footer">
 			</footer>
 			<!-- end-footer -->
+			<!-- start scroll to up button -->
+			<button class="scroll-up"></button>
+			<!-- end scroll to up button -->
 		</div>
-		
 		<script src="js/libs.min.js"></script>
-<!-- 		<script src="js/range-slider.js"></script> -->
 		<script src="js/main.js"></script>
 	</body>
 </html>
