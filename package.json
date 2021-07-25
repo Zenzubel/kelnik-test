@@ -20,6 +20,7 @@
     "gulp-uglify-es": "^2.0.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "nouislider": "^15.2.0"
   }
 }

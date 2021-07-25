@@ -115,14 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			if (position > 0) {
 				buttonScrollTop.classList.add('active');
-				// headerLogo.classList.add('active');
-				// headerPopup.classList.add('active');
 			}
 
 			if (position <= 0) {
 				buttonScrollTop.classList.remove('active');
-				// headerLogo.classList.remove('active');
-				// headerPopup.classList.remove('active');
 			}
 		});
 
@@ -134,5 +130,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 	//end scroll to top button
+
+
+	let req = new XMLHttpRequest();
+
+	req.onreadystatechange = () => {
+		if (req.readyState == XMLHttpRequest.DONE) {
+	    // console.log(req.responseText);
+	    // console.log(req.response);
+		const data = JSON.parse(req.response);
+		console.log(data);
+
+		}
+	};
+
+	req.open("GET", "https://api.jsonbin.io/v3/b/60fd73a199892a4ae9aa2e87/latest", true);
+	req.setRequestHeader("X-Master-Key", "$2b$10$eErMsMskdKRoI.qlgQnsnu/Fa6HnHBNizx7t0KgVA3LLe74Inr2nu");
+	req.send();
 
 });

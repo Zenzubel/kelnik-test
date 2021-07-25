@@ -92,7 +92,7 @@ p {
 
 @font-face {
   font-family: 'PT Root UI';
-  src: url("../../fonts/PT-Root-UI_Regular.woff2") format("woff2");
+  src: url("../fonts/PT-Root-UI_Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -100,7 +100,7 @@ p {
 
 @font-face {
   font-family: 'PT Root UI';
-  src: url("../../fonts/PT-Root-UI_Medium.woff2") format("woff2");
+  src: url("../fonts/PT-Root-UI_Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -108,7 +108,7 @@ p {
 
 @font-face {
   font-family: 'PT Root UI';
-  src: url("../../fonts/PT-Root-UI_Bold.woff2") format("woff2");
+  src: url("../fonts/PT-Root-UI_Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -116,11 +116,6 @@ p {
 
 body {
   font-family: 'PT Root UI', sans-serif;
-  color: #0B1739;
-}
-
-body.lock {
-  overflow-x: hidden;
 }
 
 .wrapper {
@@ -622,12 +617,17 @@ input[type="number"]:focus {
 .filter__input {
   margin: 0 8px;
   width: 100%;
+  max-width: 80px;
   font-family: PT Root UI;
   font-size: 16px;
   line-height: 150%;
   font-weight: 500;
   color: #0b1739;
   background-color: inherit;
+}
+
+.filter__input :invalid {
+  box-shadow: none;
 }
 
 .filter__slider {
@@ -728,6 +728,7 @@ input[type="number"]:focus {
 }
 
 .filter .apartments__wrapper {
+  color: #0B1739;
   max-width: 800px;
 }
 
@@ -805,6 +806,7 @@ input[type="number"]:focus {
   width: 100%;
   display: flex;
   background-color: #fff;
+  color: #0B1739;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 17px 0 24px;
   font-weight: 400;
@@ -830,6 +832,12 @@ input[type="number"]:focus {
 
 .filter .apartments__flat-ordinal-num {
   font-weight: 500;
+}
+
+.filter .apartments__price,
+.filter .apartments__space,
+.filter .apartments__floor {
+  color: #0b1739;
 }
 
 .filter .apartments__floor {

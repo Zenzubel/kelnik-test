@@ -141,12 +141,16 @@
 	&__input {
 		margin: 0 8px;
 		width: 100%;
+		max-width: 80px;
 		font-family: PT Root UI;
 		font-size: 16px;
 		line-height: 24 / 16 * 100%;
 		font-weight: 500;
 		color: rgba(11, 23, 57, 1);
 		background-color: inherit;
+		:invalid {
+			box-shadow: none;
+		}
 	}
 	// .filter__slider
 	&__slider {
@@ -287,6 +291,7 @@
 .apartments {
 	// .apartments__wrapper
 	&__wrapper {
+		color: #0B1739;
 		max-width: 800px;
 		@media (max-width: 1470px) {
 			max-width: calc(400px + (800 - 400) * ((100vw - 320px) / (1470 - 320)));
@@ -423,6 +428,7 @@
 		width: 100%;
 		display: flex;
 		background-color: #fff;
+		color: #0B1739;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		padding: 17px 0 24px;
 		font-weight: 400;
@@ -493,17 +499,11 @@
 	&__space-metrica {
 
 	}
-	// .apartments__floor
-	&__floor {
-		color: rgba(11, 23, 57, 0.5);
-		:first-child {
-			color: rgba(11, 23, 57, 1);
-		}
-	}
 
 	&__price, 
 	&__space, 
 	&__floor {
+		color: rgba(11, 23, 57, 1);
 		@media (max-width: 991.98px) {
 			white-space: nowrap;
 			margin-right: 30px;
@@ -512,6 +512,13 @@
 				margin-left: 0;
 			}
 		};
+	}
+	// .apartments__floor
+	&__floor {
+		color: rgba(11, 23, 57, 0.5);
+		:first-child {
+			color: rgba(11, 23, 57, 1);
+		}
 	}
 
 	&__head-space, 
