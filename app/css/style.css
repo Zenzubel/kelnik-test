@@ -586,6 +586,10 @@ input[type="number"]:focus {
   color: rgba(11, 23, 57, 0.2);
 }
 
+.filter__room-btn:disabled {
+  color: rgba(11, 23, 57, 0.2);
+}
+
 .filter__count-title {
   cursor: default;
   margin-bottom: 8px;
@@ -654,7 +658,7 @@ input[type="number"]:focus {
   cursor: pointer;
   box-shadow: none;
   top: -6px;
-  right: 0;
+  right: -1px;
 }
 
 .filter__slider .noUi-handle:before,
@@ -716,6 +720,10 @@ input[type="number"]:focus {
 }
 
 .filter__load-more.disabled {
+  opacity: 0.7;
+}
+
+.filter__load-more:disabled {
   opacity: 0.7;
 }
 
