@@ -151,8 +151,13 @@
 		font-weight: 500;
 		color: rgba(11, 23, 57, 1);
 		background-color: inherit;
-		:invalid {
+		transition-duration: 0.3s;
+		border-radius: 3px;
+		&:invalid {
 			box-shadow: none;
+		}
+		&:focus {
+			background-color: #aee5b2;
 		}
 	}
 	// .filter__slider
@@ -280,6 +285,10 @@
 		}
 		&:disabled {
 			opacity: 0.7;
+			&:hover {
+				box-shadow: none;
+				cursor: default;
+			}
 		}
 		&:focus {
 			box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);

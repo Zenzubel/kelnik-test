@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		let defaultShowApartment = 4; //the number of apartments shown
 		let clickShowApartment = 10;
 
-			if (sliderCount) {
+		if (sliderCount && sliderMeasure) {
+
 			noUiSlider.create(sliderCount, {
 				start: [2500000, 18900000],
 				connect: true,
@@ -25,13 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			});
 
-			const input0 = document.getElementById('input-count-0');
-			const input1 = document.getElementById('input-count-1');
-
-			setValue(sliderCount, input0, input1);
-		}
-
-		if (sliderMeasure) {
 			noUiSlider.create(sliderMeasure, {
 				start: [33, 123],
 				connect: true,
@@ -42,34 +36,56 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			});
 
-			const input0 = document.getElementById('input-measure-0');
-			const input1 = document.getElementById('input-measure-1');
+			const inputCount0 = document.getElementById('input-count-0');
+			const inputCount1 = document.getElementById('input-count-1');
 
-			setValue(sliderMeasure, input0, input1);
+			const inputMeasure0 = document.getElementById('input-measure-0');
+			const inputMeasure1 = document.getElementById('input-measure-1');
+
+			setValue(sliderCount, sliderMeasure, inputCount0, inputCount1, inputMeasure0, inputMeasure1);
 		}
 
-		function setValue(slider, input0, input1) {
-			const inputs = [input0, input1];
+		function setValue(sliderCount, sliderMeasure, inputCount0, inputCount1, inputMeasure0, inputMeasure1) {
+			const inputsCount = [inputCount0, inputCount1];
+			const inputsMeasure = [inputMeasure0, inputMeasure1];
+			console.log();
 
-			slider.noUiSlider.on('update', function (values, handle) {
-				inputs[handle].value = Math.round(values[handle]);
+			sliderMeasure.noUiSlider.on('update', function (values, handle) {
+				inputsMeasure[handle].value = Math.round(values[handle]);
 			});
 
-			function setRangeSlider(i , value) {
+			sliderCount.noUiSlider.on('update', function (values, handle) {
+				inputsCount[handle].value = Math.round(values[handle]);
+			});
+
+			function setMeasureRangeSlider(i , value) {
 				const arr = [null, null];
+
 				arr[i] = value;
 
-				slider.noUiSlider.set(arr);
+				sliderMeasure.noUiSlider.set(arr);
 			}
 
-			inputs.forEach((el, index)=> {
+			function setCountRangeSlider(i , value) {
+				const arr = [null, null];
+
+				arr[i] = value;
+
+				sliderCount.noUiSlider.set(arr);
+			}
+
+			inputsMeasure.forEach((el, index)=> {
 				el.addEventListener('change', (e)=> {
-					setRangeSlider(index, e.currentTarget.value);
+					setMeasureRangeSlider(index, e.currentTarget.value);
 				});
 			});
-		}
 
-		function response(rooms, area, floor, price) {
+			inputsCount.forEach((el, index)=> {
+				el.addEventListener('change', (e)=> {
+					setCountRangeSlider(index, e.currentTarget.value);
+				});
+			});
+
 			let req = new XMLHttpRequest();
 			req.open("GET", "https://api.jsonbin.io/v3/b/60fd73a199892a4ae9aa2e87/latest", true);
 			req.setRequestHeader("X-Master-Key", "$2b$10$eErMsMskdKRoI.qlgQnsnu/Fa6HnHBNizx7t0KgVA3LLe74Inr2nu");
@@ -91,18 +107,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
 							listParent.innerHTML = '';
 
+							console.log();
 							const roomsArr = [];
+
+							// start observer whatch
+							const target = document.getElementById('range-whath');
+
+							const config = {
+								attributes: true,
+								childList: true,
+								subtree: true,
+							};
+
+							const callback = function(observer) {
+								const handles = document.querySelectorAll('.noUi-handle');
+								console.log();
+								handles.forEach((handle, i)=> {
+									
+									if (handle.closest('#slider-count')) {
+
+										let minPrice = +handle.getAttribute('aria-valuenow');
+										let maxPrice = +handle.getAttribute('aria-valuetext');
+
+										console.log(minPrice);
+										console.log(maxPrice);
+									}
+
+									if (handle.closest('#slider-measure')) {
+
+										let minArea = +handle.getAttribute('aria-valuenow');
+										let maxArea = +handle.getAttribute('aria-valuemax');
+
+										console.log(minArea);
+										console.log(minArea);
+									}
+
+									
+								});
+							};
+
+							const observer = new MutationObserver(callback);
+							observer.observe(target, config);
+							// end observer whatch
 
 							list.forEach((item, i)=> {
 
 								if (item.room == apartRoom) {
 									roomsArr.push(item);
+
 								}
 							});
 
 							roomsArrLength = roomsArr.length;
-
-							// console.log(roomsArr.length);
 
 							roomsArr.slice(0, show).forEach((item, i)=> {
 
@@ -235,7 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
 											}
 										}
 									});
-									
 								}
 							});
 						}
@@ -243,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			};
 		}
-		response();
 	}
 	addFilter();
 
