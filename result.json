@@ -7,7 +7,7 @@
     "room": 3,
     "floor": 1,
     "height": 17,
-    "price": "56 630 500",
+    "price": "16 630 500",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -18,7 +18,7 @@
     "room": 3,
     "floor": 2,
     "height": 17,
-    "price": "56 650 759",
+    "price": "16 650 759",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -29,7 +29,7 @@
     "room": 3,
     "floor": 3,
     "height": 17,
-    "price": "56 650 759",
+    "price": "16 650 759",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -40,7 +40,7 @@
     "room": 3,
     "floor": 4,
     "height": 17,
-    "price": "56 671 314",
+    "price": "16 671 314",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -51,29 +51,29 @@
     "room": 3,
     "floor": 5,
     "height": 17,
-    "price": "56 671 314",
+    "price": "16 671 314",
     "handover": "1-й квартал 2022 года"
   },
   {
     "id": 31006,
     "apartmentId": "3-комнатная №109",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 63.8,
+    "area": 67,
     "room": 3,
     "floor": 6,
     "height": 17,
-    "price": "56 671 800",
+    "price": "16 671 800",
     "handover": "1-й квартал 2022 года"
   },
   {
     "id": 31007,
     "apartmentId": "3-комнатная №110",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 63.1,
+    "area": 67.5,
     "room": 3,
     "floor": 7,
     "height": 17,
-    "price": "56 771 314",
+    "price": "16 771 314",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -84,7 +84,7 @@
     "room": 3,
     "floor": 8,
     "height": 17,
-    "price": "56 850 314",
+    "price": "16 850 314",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -95,18 +95,18 @@
     "room": 3,
     "floor": 8,
     "height": 17,
-    "price": "56 860 314",
+    "price": "16 860 314",
     "handover": "1-й квартал 2022 года"
   },
   {
     "id": 31010,
     "apartmentId": "3-комнатная №113",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 63.1,
+    "area": 80,
     "room": 3,
     "floor": 8,
     "height": 17,
-    "price": "56 866 314",
+    "price": "16 866 314",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -117,7 +117,7 @@
     "room": 3,
     "floor": 8,
     "height": 17,
-    "price": "56 866 654",
+    "price": "16 866 654",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -128,7 +128,7 @@
     "room": 3,
     "floor": 9,
     "height": 17,
-    "price": "56 900 314",
+    "price": "16 900 314",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -157,7 +157,7 @@
     "id": 31015,
     "apartmentId": "3-комнатная №118",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 75,
+    "area": 95,
     "room": 3,
     "floor": 11,
     "height": 17,
@@ -168,7 +168,7 @@
     "id": 31016,
     "apartmentId": "3-комнатная №119",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 75,
+    "area": 110,
     "room": 3,
     "floor": 10,
     "height": 17,
@@ -179,7 +179,7 @@
     "id": 31017,
     "apartmentId": "3-комнатная №120",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 76,
+    "area": 99,
     "room": 3,
     "floor": 11,
     "height": 17,
@@ -201,22 +201,22 @@
     "id": 31019,
     "apartmentId": "3-комнатная №122",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 77,
+    "area": 120,
     "room": 3,
     "floor": 12,
     "height": 17,
-    "price": "17 950 000",
+    "price": "22 950 000",
     "handover": "1-й квартал 2022 года"
   },
   {
     "id": 31020,
     "apartmentId": "3-комнатная №123",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 77,
+    "area": 120,
     "room": 3,
     "floor": 12,
     "height": 17,
-    "price": "17 990 000",
+    "price": "25 990 000",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -256,7 +256,7 @@
     "id": 31024,
     "apartmentId": "3-комнатная №127",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
-    "area": 85,
+    "area": 145,
     "room": 3,
     "floor": 15,
     "height": 17,
@@ -271,7 +271,7 @@
     "room": 3,
     "floor": 16,
     "height": 17,
-    "price": "50 000 000",
+    "price": "20 000 000",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -282,7 +282,7 @@
     "room": 3,
     "floor": 16,
     "height": 17,
-    "price": "50 500 000",
+    "price": "20 500 000",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -293,7 +293,7 @@
     "room": 3,
     "floor": 17,
     "height": 17,
-    "price": "55 000 000",
+    "price": "25 000 000",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -353,7 +353,7 @@
   },
   {
     "id": 21006,
-    "apartmentId": "2-комнатная №88",
+    "apartmentId": "2-комнатная №89",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
     "area": 44,
     "room": 2,
@@ -364,13 +364,35 @@
   },
   {
     "id": 21007,
-    "apartmentId": "2-комнатная №89",
+    "apartmentId": "2-комнатная №90",
     "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
     "area": 50,
     "room": 2,
     "floor": 12,
     "height": 17,
     "price": "4 350 500",
+    "handover": "1-й квартал 2022 года"
+  },
+  {
+    "id": 21008,
+    "apartmentId": "2-комнатная №91",
+    "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
+    "area": 55,
+    "room": 2,
+    "floor": 13,
+    "height": 17,
+    "price": "4 380 500",
+    "handover": "1-й квартал 2022 года"
+  },
+  {
+    "id": 21009,
+    "apartmentId": "2-комнатная №92",
+    "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
+    "area": 55.5,
+    "room": 2,
+    "floor": 16,
+    "height": 17,
+    "price": "4 888 000",
     "handover": "1-й квартал 2022 года"
   },
   {
@@ -459,6 +481,39 @@
     "floor": 7,
     "height": 17,
     "price": "5 780 500",
+    "handover": "1-й квартал 2022 года"
+  },
+  {
+    "id": 11009,
+    "apartmentId": "1-комнатная №27",
+    "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
+    "area": 27,
+    "room": 1,
+    "floor": 8,
+    "height": 17,
+    "price": "5 900 500",
+    "handover": "1-й квартал 2022 года"
+  },
+  {
+    "id": 11010,
+    "apartmentId": "1-комнатная №27",
+    "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
+    "area": 29,
+    "room": 1,
+    "floor": 10,
+    "height": 17,
+    "price": "6 900 500",
+    "handover": "1-й квартал 2022 года"
+  },
+  {
+    "id": 11011,
+    "apartmentId": "1-комнатная №27",
+    "design": "https://github.com/Zenzubel/kelnik-test/blob/master/app/images/flat_plan_gor.jpg",
+    "area": 35,
+    "room": 1,
+    "floor": 14,
+    "height": 17,
+    "price": "7 500 500",
     "handover": "1-й квартал 2022 года"
   }
 ]

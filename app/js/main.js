@@ -1,14 +1,16 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', () => {
 
-	
-
 	function addFilter() {
 
 		const sliderCount = document.getElementById('slider-count');
 		const sliderMeasure = document.getElementById('slider-measure');
 		const buttonMore = document.querySelector('.filter__load-more');
-		let roomsArrLength;
+
+		let minPrice = 2500000;
+		let maxPrice = 25000000;
+		let minArea = 23;
+		let maxArea = 180;
 
 		let defaultRoom = 2; //the number of rooms selected by default
 		let defaultShowApartment = 4; //the number of apartments shown
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (sliderCount && sliderMeasure) {
 
 			noUiSlider.create(sliderCount, {
-				start: [2500000, 18900000],
+				start: [2500000, 20000000],
 				connect: true,
 				step: 1000,
 				range: {
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 
 			noUiSlider.create(sliderMeasure, {
-				start: [33, 123],
+				start: [23, 123],
 				connect: true,
 				step: 1,
 				range: {
@@ -46,124 +48,38 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		function setValue(sliderCount, sliderMeasure, inputCount0, inputCount1, inputMeasure0, inputMeasure1) {
-			const inputsCount = [inputCount0, inputCount1];
-			const inputsMeasure = [inputMeasure0, inputMeasure1];
-			console.log();
-
-			sliderMeasure.noUiSlider.on('update', function (values, handle) {
-				inputsMeasure[handle].value = Math.round(values[handle]);
-			});
-
-			sliderCount.noUiSlider.on('update', function (values, handle) {
-				inputsCount[handle].value = Math.round(values[handle]);
-			});
-
-			function setMeasureRangeSlider(i , value) {
-				const arr = [null, null];
-
-				arr[i] = value;
-
-				sliderMeasure.noUiSlider.set(arr);
-			}
-
-			function setCountRangeSlider(i , value) {
-				const arr = [null, null];
-
-				arr[i] = value;
-
-				sliderCount.noUiSlider.set(arr);
-			}
-
-			inputsMeasure.forEach((el, index)=> {
-				el.addEventListener('change', (e)=> {
-					setMeasureRangeSlider(index, e.currentTarget.value);
-				});
-			});
-
-			inputsCount.forEach((el, index)=> {
-				el.addEventListener('change', (e)=> {
-					setCountRangeSlider(index, e.currentTarget.value);
-				});
-			});
 
 			let req = new XMLHttpRequest();
-			req.open("GET", "https://api.jsonbin.io/v3/b/60fd73a199892a4ae9aa2e87/latest", true);
-			req.setRequestHeader("X-Master-Key", "$2b$10$eErMsMskdKRoI.qlgQnsnu/Fa6HnHBNizx7t0KgVA3LLe74Inr2nu");
+			req.open("GET", "https://api.jsonbin.io/v3/b/61012bda99892a4ae9abb90a", true);
+			req.setRequestHeader("X-Master-Key", "$2b$10$QT4xyUip1KQv7a2gLxyqdeZmekxLVtbuh/Jgp/zTo13oqAnCHeaBa");
 			req.send();
 
 			req.onreadystatechange = () => {
 				if (req.readyState == XMLHttpRequest.DONE) {
 
 				const data = JSON.parse(req.response);
-				// console.log(data.record);
 				let list = data.record;
-				
+
 				const listParent = document.getElementById('apartments-pool');
 					if (listParent) {
 
-						console.log(list);
-
-						function listFilter(apartRoom, show) {
+						function listFilter(apartRoom, show, minPrice, maxPrice, minArea, maxArea) {
 
 							listParent.innerHTML = '';
 
-							console.log();
-							const roomsArr = [];
-
-							// start observer whatch
-							const target = document.getElementById('range-whath');
-
-							const config = {
-								attributes: true,
-								childList: true,
-								subtree: true,
-							};
-
-							const callback = function(observer) {
-								const handles = document.querySelectorAll('.noUi-handle');
-								console.log();
-								handles.forEach((handle, i)=> {
-									
-									if (handle.closest('#slider-count')) {
-
-										let minPrice = +handle.getAttribute('aria-valuenow');
-										let maxPrice = +handle.getAttribute('aria-valuetext');
-
-										console.log(minPrice);
-										console.log(maxPrice);
-									}
-
-									if (handle.closest('#slider-measure')) {
-
-										let minArea = +handle.getAttribute('aria-valuenow');
-										let maxArea = +handle.getAttribute('aria-valuemax');
-
-										console.log(minArea);
-										console.log(minArea);
-									}
-
-									
-								});
-							};
-
-							const observer = new MutationObserver(callback);
-							observer.observe(target, config);
-							// end observer whatch
+							const roomsArr = [];//the main array from which the list of apartments is formed
 
 							list.forEach((item, i)=> {
 
-								if (item.room == apartRoom) {
-									roomsArr.push(item);
+								let price = +item.price.replace(/ /g, "");
+								let area = item.area;
 
+								if (item.room == apartRoom && price >= minPrice && price <= maxPrice && area >= minArea && area <= maxArea) {
+									roomsArr.push(item);
 								}
 							});
 
-							roomsArrLength = roomsArr.length;
-
 							roomsArr.slice(0, show).forEach((item, i)=> {
-
-								console.log();
-
 								listParent.innerHTML += `
 									<a href="#" class="apartments__body">
 										<div class="apartments__design column-1">
@@ -190,8 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
 									</a>
 								`;
 							});
+
 						}
-						listFilter(defaultRoom, defaultShowApartment);
+						listFilter(defaultRoom, defaultShowApartment, minPrice, maxPrice, minArea, maxArea);
 
 						const roomsButtonsParent = document.querySelector('.filter__inner');
 						if (roomsButtonsParent) {
@@ -207,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
 							roomBtn.forEach((button, i)=> {
 								btnLenght.push(i + 1);
 							});
-
 
 							list.forEach((apartment, i)=> {
 								apartmentsRooms.push(apartment.room);
@@ -254,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 										if (target == item) {
 											hideButtons();
 											showButton(i);
-											listFilter(i + 1, defaultShowApartment);
+											listFilter(i + 1, defaultShowApartment, minPrice, maxPrice, minArea, maxArea);
 										}
 									});
 									buttonMore.disabled = false;
@@ -265,9 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
 										hideButtons();
 										showButton(defaultRoom - 1);
 
-										sliderMeasure.noUiSlider.set([33, 123]);
-										sliderCount.noUiSlider.set([2500000, 18900000]);
-										listFilter(defaultRoom, defaultShowApartment);
+										sliderMeasure.noUiSlider.set([23, 123]);
+										sliderCount.noUiSlider.set([2500000, 20000000]);
+										listFilter(defaultRoom, defaultShowApartment, minPrice, maxPrice, minArea, maxArea);
 										buttonMore.disabled = false;
 									});
 								}
@@ -278,32 +194,96 @@ document.addEventListener('DOMContentLoaded', () => {
 										if (item.classList.contains('active')) {
 											//we get the number of the active button
 											const roomNum = item.getAttribute('data-room');
-											//we get the number of visible apartments in real time
 
-											const realRoomCount = Array.from(document.getElementsByClassName('apartments__body'));
-											//showing hidden elements to the visible list
-											listFilter(roomNum, (realRoomCount.length - 1) + clickShowApartment);
-
-											const newRealRoomCounts = Array.from(document.getElementsByClassName('apartments__body'));
-
-											if (roomsArrLength <= newRealRoomCounts.length - 1) {
-												target.disabled = true;
-											}
+											listFilter(roomNum, 10, minPrice, maxPrice, minArea, maxArea);
 										}
 									});
 								}
 							});
 						}
+
+						//start renge slider
+						const inputsCount = [inputCount0, inputCount1];
+						const inputsMeasure = [inputMeasure0, inputMeasure1];
+
+						let activeRoomNum = [];
+
+						const totalAllrooms = [];//all numbers of rooms
+
+						list.forEach((item, i)=> {
+
+							totalAllrooms.push(item.room);
+						});
+
+						let count = {};
+						totalAllrooms.forEach(function(i) { count[i] = (count[i]||0) + 1;});//a list of rooms and the number of apartments with these rooms
+
+						function showActiveButton() {
+							activeRoomNum.length = 0;
+							let activeRoom = document.querySelectorAll('.filter__room-btn').forEach(item=> {
+								if (item.classList.contains('active')) {
+									activeRoomNum.push(item.getAttribute('data-room'));
+								}
+							});
+						}
+
+						sliderMeasure.noUiSlider.on('update', function (values, handle) {
+							inputsMeasure[handle].value = Math.ceil(values[handle]);
+
+							minArea = inputsMeasure[0].value;
+							maxArea = inputsMeasure[1].value;
+
+							showActiveButton();
+
+							listFilter(+activeRoomNum[0], defaultShowApartment, minPrice, maxPrice, minArea, maxArea);
+						});
+
+						sliderCount.noUiSlider.on('update', function (values, handle) {
+							inputsCount[handle].value = Math.ceil(values[handle]);
+
+							minPrice = inputsCount[0].value;
+							maxPrice = inputsCount[1].value;
+
+							showActiveButton();
+
+							listFilter(+activeRoomNum[0], defaultShowApartment, minPrice, maxPrice, minArea, maxArea);
+
+						});
+
+						function setMeasureRangeSlider(i , value) {
+							const arr = [null, null];
+
+							arr[i] = value;
+
+							sliderMeasure.noUiSlider.set(arr);
+						}
+
+						function setCountRangeSlider(i , value) {
+							const arr = [null, null];
+
+							arr[i] = value;
+
+							sliderCount.noUiSlider.set(arr);
+						}
+
+						inputsMeasure.forEach((el, index)=> {
+							el.addEventListener('change', (e)=> {
+								setMeasureRangeSlider(index, e.currentTarget.value);
+							});
+						});
+
+						inputsCount.forEach((el, index)=> {
+							el.addEventListener('change', (e)=> {
+								setCountRangeSlider(index, e.currentTarget.value);
+							});
+						});
+						//end renge slider
 					}
 				}
 			};
 		}
 	}
 	addFilter();
-
-
-
-	
 
 	//start scroll to top button
 	const buttonScrollTop = document.querySelector('.scroll-up');
